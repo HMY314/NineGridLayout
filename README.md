@@ -3,7 +3,7 @@
 
 ![](https://github.com/HMY314/NineGridLayout/blob/master/imageCache/GIF.gif)
 
-
+----------
 ##一、介绍
         1、当只有1张图时，可以自己定制图片宽高，也可以使用默认九宫格的宽高；
         2、当只有4张图时，以2*2的方式显示；
@@ -15,7 +15,7 @@
                 如果设置全部显示，理所当然的将所有图片都显示出来。
         4、图片被按下时，会有一个变暗的效果，这也是模仿微信朋友圈的效果。
 
-
+----------
 ##二、使用方法
 
 1、核心类是NineGridLayout，继承自ViewGroup的抽象类，所以我们实际项目使用需要继承它，并要实现3个方法，如下：
@@ -40,6 +40,7 @@
             protected abstract void onClickImage(int position, String url, List<String> urlList);
         }
 
+----------
 2、我这里用NineGridTestLayout继承NineGridLayout实现，displayOneImage()与displayImage()中的参数都是显示图片需要的，我这里用的是ImageLoader显示图片，当然你也可以用其他的。
 
         public class NineGridTestLayout extends NineGridLayout {
@@ -108,23 +109,28 @@
          }
         }
 
+----------
 3、在xml中实现
-        <com.hmy.ninegridlayout.view.NineGridTestLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/layout_nine_grid"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            app:sapcing="4dp" />
-            app:sapcing是设置九宫格中图片之间的间隔。
 
+        <com.hmy.ninegridlayout.view.NineGridTestLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/layout_nine_grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:sapcing="4dp" />
+
+app:sapcing是设置九宫格中图片之间的间隔。
+
+----------
 4、使用：
+
         public List<String> urlList = new ArrayList<>();//图片url
         NineGridTestLayout layout = (NineGridTestLayout) view.findViewById(R.id.layout_nine_grid);
         layout.setIsShowAll(false); //当传入的图片数超过9张时，是否全部显示
         layout.setSpacing(5); //动态设置图片之间的间隔
         holder.layout.setUrlList(urlList); //最后再设置图片url
 
-
+----------
 5、效果图
 
 ![](https://github.com/HMY314/NineGridLayout/blob/master/imageCache/img1.png)
