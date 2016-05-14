@@ -1,19 +1,24 @@
 # NineGridLayout
 一个仿微信朋友圈和QQ空间的九宫格图片展示自定义控件。
 
+![](https://github.com/HMY314/NineGridLayout/blob/master/imageCache/GIF.gif)
+
+
 ##一、介绍
         1、当只有1张图时，可以自己定制图片宽高，也可以使用默认九宫格的宽高；
         2、当只有4张图时，以2*2的方式显示；
         3、除以上两种情况下，都是按照3列方式显示，但这时有一些细节：
             a、如果只有9张图，当然是以3*3的方式显示；
-            b、如果超过9张图，可以设置是否全部显示。如果设置不完全显示，则按照3*3的方式显示，但是在第9张图上会有一个带“+”号的数字，代表还有几张没有显示，这里是模仿了QQ空间图片超出9张的显示方式；
+            b、如果超过9张图，可以设置是否全部显示。
+                如果设置不完全显示，则按照3*3的方式显示，但是在第9张图上会有一个带“+”号的数字，
+                代表还有几张没有显示，这里是模仿了QQ空间图片超出9张的显示方式；
                 如果设置全部显示，理所当然的将所有图片都显示出来。
         4、图片被按下时，会有一个变暗的效果，这也是模仿微信朋友圈的效果。
 
 
 ##二、使用方法
 
-        1、核心类是NineGridLayout，继承自ViewGroup的抽象类，所以我们实际项目使用需要继承它，并要实现3个方法，如下：
+1、核心类是NineGridLayout，继承自ViewGroup的抽象类，所以我们实际项目使用需要继承它，并要实现3个方法，如下：
             public abstract class NineGridLayout extends ViewGroup {
 
                 //******************************其他代码省略**************************
@@ -35,7 +40,7 @@
                     protected abstract void onClickImage(int position, String url, List<String> urlList);
             }
 
-         2、我这里用NineGridTestLayout继承NineGridLayout实现，displayOneImage()与displayImage()中的参数都是显示图片需要的，我这里用的是ImageLoader显示图片，当然你也可以用其他的。
+2、我这里用NineGridTestLayout继承NineGridLayout实现，displayOneImage()与displayImage()中的参数都是显示图片需要的，我这里用的是ImageLoader显示图片，当然你也可以用其他的。
              public class NineGridTestLayout extends NineGridLayout {
 
                  protected static final int MAX_W_H_RATIO = 3;
@@ -102,7 +107,7 @@
                  }
              }
 
-         3、在xml中实现
+3、在xml中实现
                  <com.hmy.ninegridlayout.view.NineGridTestLayout xmlns:app="http://schemas.android.com/apk/res-auto"
                      android:id="@+id/layout_nine_grid"
                      android:layout_width="match_parent"
@@ -111,7 +116,7 @@
                      app:sapcing="4dp" />
             app:sapcing是设置九宫格中图片之间的间隔。
 
-         4、使用
+4、使用
                 public List<String> urlList = new ArrayList<>();//图片url
 
                 NineGridTestLayout layout = (NineGridTestLayout) view.findViewById(R.id.layout_nine_grid);
@@ -121,3 +126,9 @@
 
 
 
+
+![](https://github.com/HMY314/NineGridLayout/blob/master/imageCache/img1.png)
+![](https://github.com/HMY314/NineGridLayout/blob/master/imageCache/img2.png)
+![](https://github.com/HMY314/NineGridLayout/blob/master/imageCache/img3.png)
+![](https://github.com/HMY314/NineGridLayout/blob/master/imageCache/img4.png)
+![](https://github.com/HMY314/NineGridLayout/blob/master/imageCache/img5.png)
