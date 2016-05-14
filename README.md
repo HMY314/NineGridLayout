@@ -117,7 +117,7 @@
             app:sapcing="4dp" />
             app:sapcing是设置九宫格中图片之间的间隔。
 
-4、使用
+4、使用：
         public List<String> urlList = new ArrayList<>();//图片url
         NineGridTestLayout layout = (NineGridTestLayout) view.findViewById(R.id.layout_nine_grid);
         layout.setIsShowAll(false); //当传入的图片数超过9张时，是否全部显示
