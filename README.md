@@ -124,11 +124,11 @@ app:sapcing是设置九宫格中图片之间的间隔。
 ----------
 4、使用：
 
-        public List<String> urlList = new ArrayList<>();//图片url
+        List<String> urlList = new ArrayList<>();//图片url
         NineGridTestLayout layout = (NineGridTestLayout) view.findViewById(R.id.layout_nine_grid);
         layout.setIsShowAll(false); //当传入的图片数超过9张时，是否全部显示
         layout.setSpacing(5); //动态设置图片之间的间隔
-        holder.layout.setUrlList(urlList); //最后再设置图片url
+        layout.setUrlList(urlList); //最后再设置图片url
 
 ----------
 5、效果图
