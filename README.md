@@ -1,6 +1,8 @@
 # NineGridLayout
 一个仿微信朋友圈和QQ空间的九宫格图片展示自定义控件。
 
+CSDN：[http://blog.csdn.net/hmyang314/article/details/51415396](http://blog.csdn.net/hmyang314/article/details/51415396)
+
 ![](https://github.com/HMY314/NineGridLayout/blob/master/imageCache/GIF.gif)
 
 ----------
