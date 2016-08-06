@@ -26,7 +26,7 @@ public class NineGridTestAdapter extends BaseAdapter {
 
     public NineGridTestAdapter(Context context) {
         mContext = context;
-        inflater = LayoutInflater.from(mContext);
+        inflater = LayoutInflater.from(context);
     }
 
     public void setList(List<NineGridTestModel> list) {

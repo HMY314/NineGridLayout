@@ -2,18 +2,17 @@ package com.hmy.ninegridlayout;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListView;
 
 import com.hmy.ninegridlayout.adapter.NineGridTestAdapter;
 import com.hmy.ninegridlayout.model.NineGridTestModel;
+import com.hmy.ninegridlayout.view.ListViewExampleActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
-    private ListView mListView;
-    private NineGridTestAdapter mAdapter;
 
     private List<NineGridTestModel> mList = new ArrayList<>();
     private String[] mUrls = new String[]{"http://d.hiphotos.baidu.com/image/h%3D200/sign=201258cbcd80653864eaa313a7dca115/ca1349540923dd54e54f7aedd609b3de9c824873.jpg",
@@ -36,19 +35,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initData();
-        initView();
     }
 
     private void initData() {
         initListData();
-        mAdapter = new NineGridTestAdapter(this);
-        mAdapter.setList(mList);
     }
 
-    protected void initView() {
-        mListView = (ListView) findViewById(R.id.lv_bbs);
-
-        mListView.setAdapter(mAdapter);
+    public void click(View view) {
+        switch (view.getId()) {
+            case R.id.btn_RecyclerViewExample:
+                RecyclerViewExampleActivity.startActivity(this, mList);
+                break;
+            case R.id.btn_ListViewExample:
+                ListViewExampleActivity.startActivity(this, mList);
+                break;
+        }
     }
 
     private void initListData() {
