@@ -16,6 +16,7 @@ import com.hmy.ninegridlayout.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.TimerTask;
 
 /**
  * 描述:
@@ -108,6 +109,15 @@ public abstract class NineGridLayout extends ViewGroup {
     }
 
     public void notifyDataSetChanged() {
+        post(new TimerTask() {
+            @Override
+            public void run() {
+                refresh();
+            }
+        });
+    }
+
+    private void refresh() {
         removeAllViews();
         int size = getListSize(mUrlList);
         if (size > 0) {
