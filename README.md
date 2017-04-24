@@ -6,7 +6,7 @@ CSDN：[http://blog.csdn.net/hmyang314/article/details/51415396](http://blog.csd
 ![](https://github.com/HMY314/NineGridLayout/blob/master/imageCache/GIF.gif)
 
 ----------
-##一、介绍
+## 一、介绍
         1、当只有1张图时，可以自己定制图片宽高，也可以使用默认九宫格的宽高；
         2、当只有4张图时，以2*2的方式显示；
         3、除以上两种情况下，都是按照3列方式显示，但这时有一些细节：
@@ -18,7 +18,7 @@ CSDN：[http://blog.csdn.net/hmyang314/article/details/51415396](http://blog.csd
         4、图片被按下时，会有一个变暗的效果，这也是模仿微信朋友圈的效果。
 
 ----------
-##二、使用方法
+## 二、使用方法
 
 1、核心类是NineGridLayout，继承自ViewGroup的抽象类，所以我们实际项目使用需要继承它，并要实现3个方法，如下：
 
